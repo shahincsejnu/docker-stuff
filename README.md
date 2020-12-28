@@ -27,3 +27,11 @@
 
 - `sudo apt-get update`
 - `sudo apt-get install docker-ce docker-ce-cli containerd.io`
+
+
+## Manage Docker as a non-root user (use docker without sudo)
+
+- `sudo groupadd docker`
+- `sudo usermod -aG docker $USER`
+- log out and log back
+- `newgrp docker`
