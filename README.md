@@ -46,3 +46,9 @@
 |`users`  or `sudo users` | To see the users, user id of the root user is 0|
 |`id -u` | To get user id|
 |`id -g` | To get group id|
+|`docker ps`| To see all the containers running in your machine |
+|`docker exec -it container_id sh`| To enter a container whose id is container_id|
+|`exit` | To exit from a docker container|
+|`ls -l`| |
+|`hostname`| To see the hostname/container_id|
+|`route -n`| Can see the routing table of the container|
