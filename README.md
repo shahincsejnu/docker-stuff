@@ -35,3 +35,14 @@
 - `sudo usermod -aG docker $USER`
 - log out and log back
 - `newgrp docker`
+
+
+## docker essential commands
+
+|Commands|Uses|
+|----|----|
+|`ps aux` | To see which processes are currently running in your machine|
+|`ip addr show` | To see the ethernet card in your machine including virtual ethernet card|
+|`users`  or `sudo users` | To see the users, user id of the root user is 0|
+|`id -u` | To get user id|
+|`id -g` | To get group id|
