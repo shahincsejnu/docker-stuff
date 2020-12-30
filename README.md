@@ -47,8 +47,20 @@
 |`id -u` | To get user id|
 |`id -g` | To get group id|
 |`docker ps`| To see all the containers running in your machine |
-|`docker exec -it container_id sh`| To enter a container whose id is container_id|
+|`docker ps -a` | To see the all available docker container in your machine with their details|
+|`docker images`| |
+|`docker stop container_id`| To stop running container |
+|`docker rm container_id` | To remove a docker container |
+|`docker inspect container_id` | To see full information about the container, will return json file|
+|`docker exec -it container_id sh`| To enter a container whose id is container_id in shell|
+|`docker exec -it container_id bash`| To enter a container whose id is container_id in bash|
 |`exit` | To exit from a docker container|
 |`ls -l`| |
 |`hostname`| To see the hostname/container_id|
 |`route -n`| Can see the routing table of the container|
+|`docker build -t image_name_in_small_case .`| To build the docker image from the Dockerfile|
+|`docker image ls`| To see the list of all the available images with their tag, image id, creation time and size|
+|`docker run -d -p 8080:8080 image_name`| To run the docker image with the port mapping and in detached mode|
+|`docker run -p 8080:8080 image_name`| |
+
+
