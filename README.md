@@ -62,5 +62,6 @@
 |`docker image ls`| To see the list of all the available images with their tag, image id, creation time and size|
 |`docker run -d -p 8080:8080 image_name`| To run the docker image with the port mapping and in detached mode|
 |`docker run -p 8080:8080 image_name`| |
+|`docker run -p 8081:8088 <image_name> start -p "8088"`| To set container port at 8088 and map pc port 8081 to container port 8088 |
 
 
