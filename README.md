@@ -37,6 +37,26 @@
 - `newgrp docker`
 
 
+## upload the docker image to [Docker Hub](https://hub.docker.com/)
+
+### First way
+
+- `docker login --username=<docker_hub_username>`
+- `docker tag <id_of_the_created_image> <docker_hub_username>/<name_of_the_image>:<tag>`
+- `docker push <docker_hub_username>/<name_of_the_image>:<tag>`
+
+### Second way
+
+#### During docker image build use this
+
+- `docker build -t <docker_hub_username>/<image_name>:<tag> .`
+
+#### then for uploading in docker hub
+
+- `docker login --username=<docker_hub_username>`
+- `docker push <image_repository_name>:<tag>`
+
+
 ## docker essential commands
 
 |Commands|Uses|
