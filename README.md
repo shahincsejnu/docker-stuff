@@ -67,10 +67,13 @@
 |`id -u` | To get user id|
 |`id -g` | To get group id|
 |`docker ps`| To see all the containers running in your machine |
-|`docker ps -a` | To see the all available docker container in your machine with their details|
+|`docker ps -a` | To see the all available docker container in your machine(running and not running) with their details|
 |`docker images`| To see the all the images available in your machine|
 |`docker stop container_id`| To stop running container |
-|`docker rm container_id` | To remove a docker container |
+|`docker stop $(docker ps -a -q)`| To stop all running containers|
+|`docker rm container_id` | To remove/delete a docker container(only if stopped) |
+|`docker rm $(docker ps -a -q)`| To delete all containers (only if stopped)|
+|`docker logs container_id`| To display logs of a container|
 |`docker inspect container_id` | To see full information about the container, will return json file|
 |`docker exec -it container_id sh`| To enter a container whose id is container_id in shell|
 |`docker exec -it container_id bash`| To enter a container whose id is container_id in bash|
@@ -93,4 +96,7 @@
 |`docker rmi -f $(docker images -a -q)` | To delete all the images, but before this you should remove all the containers which are created from this images|
 |`docker rm -vf $(docker ps -a -q)` | To delete all containers including its volumes usee|
 |`docker container prune` | |
+|`docker image rm <image_name>` | To delete a specific image|
+|`docker run -v <absolute_host_path/.env>:<container_path/.env> -p 8088:8089 <image_name> start -p 8089`| To run the docker image where did not provide the .env file using docker mounting volumes on host|
+
 
