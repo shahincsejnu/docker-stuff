@@ -58,7 +58,7 @@
 |`ls -l`| |
 |`hostname`| To see the hostname/container_id|
 |`route -n`| Can see the routing table of the container|
-|`docker build -t <give_an_image_name> .`| To build the docker image from the Dockerfile|
+|`docker build -t <give_an_image_name> .`| To build the docker image from the Dockerfile, by doing this the tag will be latest of the image|
 |`docker image ls`| To see the list of all the available images with their tag, image id, creation time and size|
 |`docker run -d -p 8080:8080 image_name`| To run the docker image with the port mapping and in detached mode|
 |`docker run -p 8080:8080 image_name`| |
@@ -67,6 +67,10 @@
 |`delete rmi image_id`| To delete a specific image|
 |`delete rmi -f image_id`| To delete a docker image forcefully|
 |`docker rm -f (docker ps -a `&#124;` awk '{print$1}')` | To delete all the docker container available in your machine|
-|`docker rmi -f (docker images `&#124;` grep none `&#124;` awk '{print $3}')` | To delete all the docker images available in your machine|
-
+|`docker rmi -f (docker images `&#124;` grep none `&#124;` awk '{print $3}')` | To delete all the docker images named none available in your machine|
+|`docker build -t docker_hub_username/image_name:tag_name .` | Tell the docker daemon to fetch the docker file present in the current directory(that's what the . does), then to build the image and give it a specified tag, by doing this don't need to tag before pushing docker hub|
+|`docker tag source_image[:tag] target_image[:tag]` | This command just creates an alias (a reference) by the name of the TARGET_IMAGE that refers to the SOURCE_IMAGE. That’s all it does. It’s like assigning an existing image another name to refer to it. Notice how the tag is specified as optional here as well, by the [:TAG]|
+|`docker rmi -f $(docker images -a -q)` | To delete all the images, but before this you should remove all the containers which are created from this images|
+|`docker rm -vf $(docker ps -a -q)` | To delete all containers including its volumes usee|
+|`docker container prune` | |
 
