@@ -48,7 +48,7 @@
 |`id -g` | To get group id|
 |`docker ps`| To see all the containers running in your machine |
 |`docker ps -a` | To see the all available docker container in your machine with their details|
-|`docker images`| |
+|`docker images`| To see the all the images available in your machine|
 |`docker stop container_id`| To stop running container |
 |`docker rm container_id` | To remove a docker container |
 |`docker inspect container_id` | To see full information about the container, will return json file|
@@ -58,10 +58,15 @@
 |`ls -l`| |
 |`hostname`| To see the hostname/container_id|
 |`route -n`| Can see the routing table of the container|
-|`docker build -t image_name_in_small_case .`| To build the docker image from the Dockerfile|
+|`docker build -t <give_an_image_name> .`| To build the docker image from the Dockerfile|
 |`docker image ls`| To see the list of all the available images with their tag, image id, creation time and size|
 |`docker run -d -p 8080:8080 image_name`| To run the docker image with the port mapping and in detached mode|
 |`docker run -p 8080:8080 image_name`| |
 |`docker run -p 8081:8088 <image_name> start -p "8088"`| To set container port at 8088 and map pc port 8081 to container port 8088 |
+|`delete rm container_id`| To delete a specific container with id container_id|
+|`delete rmi image_id`| To delete a specific image|
+|`delete rmi -f image_id`| To delete a docker image forcefully|
+|`docker rm -f (docker ps -a `&#124;` awk '{print$1}')` | To delete all the docker container available in your machine|
+|`docker rmi -f (docker images `&#124;` grep none `&#124;` awk '{print $3}')` | To delete all the docker images available in your machine|
 
 
