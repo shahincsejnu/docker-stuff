@@ -78,6 +78,7 @@
 |`docker exec -it container_id sh`| To enter a container whose id is container_id in shell|
 |`docker exec -it container_id bash`| To enter a container whose id is container_id in bash|
 |`exit` | To exit from a docker container|
+|`ps` | To see the processes that are running inside a docker container|
 |`ls -l`| |
 |`hostname`| To see the hostname/container_id|
 |`route -n`| Can see the routing table of the container|
